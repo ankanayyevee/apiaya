@@ -1,0 +1,244 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+/* 
+ * APlaya.css
+ * By Monkey Raptor (monkeyraptor.johanpaul.net)    
+ * Mar 1, 2014 (Updated Aug 19, 2015) - MIT License
+ */
+.APlaya,
+.APlaya > * {
+    font-family: consolas, monaco, monospace;
+    margin: 0;
+}
+
+.APlaya {
+    width: 420px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.APlaya-play,
+.APlaya-pause,
+.APlaya-rewind {
+    border: 0;
+    outline: 0;
+    height: 30px;
+    width: 36px;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #999;
+    font-weight: bold;
+}
+
+.APlaya-seekbar[type="range"],
+.APlaya-vol[type="range"] {
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    background: #999;
+    border: 0;
+    height: 4px;
+    border-radius: 5px;
+    vertical-align: middle;
+    width: 100px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.APlaya-vol[type="range"] {
+    width: 50px;
+}
+
+.APlaya-vol[type="range"]::-webkit-slider-thumb,
+.APlaya-seekbar[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    box-shadow: 0 -2px 6px #ddd inset, 0 1px 3px #aaa;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: -2px;
+}
+
+.APlaya-time[type="text"] {
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    height: 28px;
+    vertical-align: top;
+    background: #fff;
+    box-shadow: 0 1px 4px #aaa inset, 0 -10px 20px #ccc inset;
+    text-align: center;
+    font-weight: bold;
+    color: #bbb;
+    padding: 0 10px;
+    text-shadow: 1px 1px 1px #fff;
+    transition: all .5s;
+}
+
+.APlaya-progress {
+    width: 0;
+    position: absolute;
+    height: 6px;
+    background: #ddd;
+    margin: 0 auto;
+    padding: 6px 0;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px #aaa inset;
+    margin-top: -18px;
+    transition: width 0.5s;
+}
+
+.light-color {
+    background: white;
+    box-shadow: 0 -5px 20px #ddd inset;
+}
+
+.btn-light-color {
+    background: #fff;
+    box-shadow: 0 -5px 10px #eee inset, 0 1px 3px #888;
+}
+
+.btn-light-color:hover {
+    color: #777 !important;
+}
+
+.btn-light-color:active {
+    box-shadow: 0 5px 10px #eee inset !important;
+    color: deepskyblue !important;
+}
+
+.APlaya-seekbar-wrap,
+.APlaya-vol-wrap {
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: -1px;
+}
+
+.wrapper-x {
+    padding: 5px 30px;
+    width: 420px;
+    height: auto;
+    background: #CCC;
+    box-shadow: 0 -10px 20px #888 inset, 0 10px 20px #FFF inset;
+    margin: auto;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.btn-light-color[disabled],
+.btn-light-color[disabled]:hover,
+.btn-light-color[disabled]:active {
+    cursor: not-allowed;
+    background: #ddd !important;
+    box-shadow: none !important;
+    color: #999 !important;
+}
+
+.APlaya-seekbar[type="range"][disabled],
+.APlaya-vol[type="range"][disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.APlaya > button, .APlaya > div {
+    margin: 0 5px;
+}
+
+.explanation {
+    display: inline-block;
+    margin: 10px auto;
+    background: #bbb;
+    box-shadow: 1px 1px 2px #888 inset;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+body {
+    background: #ddd;
+    background-image: -ms-radial-gradient(center top, ellipse farthest-side, #FFF 0, #DDD 100%);
+    background-image: -moz-radial-gradient(center top, ellipse farthest-side, #FFF 0, #DDD 100%);
+    background-image: -o-radial-gradient(center top, ellipse farthest-side, #FFF 0, #DDD 100%);
+    background-image: -webkit-gradient(radial, center top, 0, center top, 487, color-stop(0, #FFF), color-stop(1, #DDD));
+    background-image: -webkit-radial-gradient(center top, ellipse farthest-side, #FFF 0, #DDD 100%);
+    background-image: radial-gradient(ellipse farthest-side at center top, #FFF 0, #DDD 100%);
+    font-family: consolas, sans-serif;
+    background-repeat: no-repeat;
+}
+
+hr {
+    width: 300px;
+    border: 0;
+    background: transparent;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #fff;
+}
+
+.notif {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #000;
+    display: none;
+    margin-bottom: 2em;
+}
+
+.center,
+.notif,
+.APlaya,
+.explanation,
+.APlaya-play,
+.APlaya-pause,
+.APlaya-rewind {
+    text-align: center;
+}
+
+.re {
+    width: 480px;
+    max-width: 100%;
+    margin: auto;
+    text-align: justify;
+}
+
+.headr {
+    margin-bottom: 2em;
+}
+
+.footer {
+    margin-top: 1em;
+}
+
+mark {
+    display: inline-block;
+    padding: 0 4px 2px 4px;
+    border-radius: 3px;    
+    box-shadow: 0 1px 2px #777;
+}
+
+@media (max-width:475px) {
+    .lame {
+        display: none;
+    }
+    body,
+    .wrapper-x,
+    .APlaya,
+    hr,
+    ul,
+    ul li {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0 8px 8px 8px;
+    }
+    .APlaya-time {
+        margin: 20px auto;
+        width: 80%;
+    }
+}
